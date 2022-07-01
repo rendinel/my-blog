@@ -1,17 +1,20 @@
 import React from 'react';
-import { setConstantValue } from 'typescript';
+import { FiSearch } from 'react-icons/fi';
 import { SearchFieldStyles } from '../../styles/search/SearchFieldStyles';
 
-const SearchField = ({ value, setValue, onFocus }) => (
-  <SearchFieldStyles>
-    <input
-      type="text"
-      placeholder="search"
-      value={value}
-      onChange={(e) => setConstantValue(e.target.value)}
-      onFocus={onFocus && onFocus}
-    />
-  </SearchFieldStyles>
-);
+function SearchField({ value, setValue, onFocus }) {
+  return (
+    <SearchFieldStyles>
+      <input
+        type="text"
+        placeholder="Search"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        onFocus={onFocus && onFocus}
+      />
+      <FiSearch className="searchIcon" />
+    </SearchFieldStyles>
+  );
+}
 
 export default SearchField;
